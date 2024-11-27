@@ -1,0 +1,17 @@
+version: '3'
+services: 
+  tango:  #name of the services
+    build:
+      dockerfile: image
+    container_name: squid
+    ports: 
+      - "8000:80"  #add the port in firewall
+    volumes:
+      - tnt:/data  #not necessory
+    networks: 
+      - net1
+
+networks:
+  net1:
+volumes:
+  tnt:
